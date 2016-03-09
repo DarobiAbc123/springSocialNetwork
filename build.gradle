@@ -1,0 +1,49 @@
+apply plugin: 'java'
+apply plugin: 'war'
+apply plugin: 'eclipse'
+
+ext.springVersion = "4.2.5.RELEASE"
+ext.springDataVersion = "1.8.2.RELEASE"
+ext.hibernateVersion = "4.3.11.Final"
+ext.h2Version = "1.4.191"
+ext.freemarkerVersion = "2.3.23"
+ext.jacksonVersion = "2.6.3"
+
+ext.servletAPIVersion = "3.0.1"
+ext.javaxInjectVersion = "1"
+ext.jspAPIVersion = "2.2"
+
+ext.junitVersion = "4.+"
+ext.mockitoVersion = "1.10.19"
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.springframework:spring-context:' + springVersion
+    compile 'org.springframework:spring-context-support:' + springVersion
+    compile 'org.springframework:spring-web:'  + springVersion
+    compile 'org.springframework:spring-webmvc:'  + springVersion
+    compile 'org.springframework:spring-orm:'  + springVersion
+    compile 'org.springframework:spring-tx:' + springVersion
+    compile 'org.springframework.data:spring-data-jpa:' + springDataVersion
+
+    compile 'org.hibernate:hibernate-entitymanager:' + hibernateVersion
+    compile 'com.h2database:h2:' + h2Version
+    compile 'org.freemarker:freemarker:' + freemarkerVersion
+    compile 'com.fasterxml.jackson.core:jackson-core:' + jacksonVersion
+    compile 'com.fasterxml.jackson.core:jackson-databind:' + jacksonVersion
+
+    compile 'org.slf4j:slf4j-simple:1.7.18'
+    compile 'commons-dbcp:commons-dbcp:1.2.2'
+    compile 'commons-fileupload:commons-fileupload:1.2.1'
+
+    providedCompile 'javax.servlet:javax.servlet-api:' + servletAPIVersion
+    providedCompile 'javax.inject:javax.inject:' + javaxInjectVersion
+    providedCompile 'javax.servlet.jsp:jsp-api:' + jspAPIVersion
+
+    testCompile 'junit:junit:' + junitVersion
+    testCompile 'org.springframework:spring-test:' + springVersion
+    testCompile 'org.mockito:mockito-core:' + mockitoVersion
+}
