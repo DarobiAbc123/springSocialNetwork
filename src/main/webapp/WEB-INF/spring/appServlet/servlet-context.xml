@@ -65,6 +65,7 @@
 
     <mvc:interceptors>
         <beans:bean class="de.gertuts4pc.springsocial.interceptor.RequireLoginInterceptor"/>
+        <beans:bean class="de.gertuts4pc.springsocial.interceptor.AddUserIDInterceptor"/>
     </mvc:interceptors>
 
 </beans:beans>
